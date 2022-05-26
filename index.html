@@ -1,820 +1,871 @@
 <html lang="en">
-    <head>
-        <title>Mohd Jauwad | Web Developer</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, height=device-height initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-        <meta name="author" content="Mohd Jauwad">
-        <link rel="author" href="https://github.com/mohd-jauwad/" alt="">
-        <script>
-            (function($){
-                $(document).ready(function(){
-                    $(window).scroll(function() {
-                        var navbox = jQuery('#Navigation');
-                        var navboxh = jQuery('#nav-container-mobile');
-                        var prof = jQuery('#Profile').offset().top - $(window).scrollTop();
-                        var exper = jQuery('#Experience').offset().top - $(window).scrollTop();
-                        var skill = jQuery('#Skills').offset().top - $(window).scrollTop();
-                        var portf = jQuery('#Portfolio').offset().top - $(window).scrollTop();
-                        var cont = jQuery('#Contact').offset().top - $(window).scrollTop();
-
-                        //make the nav bar float along with the page
-                        if(prof < 40) {
-                            navbox.addClass('nav-float');
-                            navbox.removeClass('nav-scroll');
-                        }
-
-                        if(prof < 1) {
-                            navboxh.addClass('nav-float-mobile');
-                            navboxh.removeClass('nav-scroll');
-                        }
-
-                        //make the nav bar lock back into position
-                        if(prof > 39) {
-                            navbox.addClass('nav-scroll');
-                            navbox.removeClass('nav-float');
-                        }
-
-                        if(prof > 0) {
-                            navboxh.addClass('nav-scroll');
-                            navboxh.removeClass('nav-float-mobile');
-                        }
-
-                        //profile
-                        if(exper > 0) {
-                            var element = jQuery('#nav-profile-link');
-                            var elementh = jQuery('#nav-profile-link-mobile')
-                            element.siblings('li').removeClass('nav-active inactiveLink');
-                            elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
-                            element.addClass('nav-active inactiveLink');
-                            elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
-                        }
-                        //experience
-                        if(exper < 1 && skill > 0) {
-                            var element = jQuery('#nav-experience-link');
-                            var elementh = jQuery('#nav-experience-link-mobile');
-                            element.siblings('li').removeClass('nav-active inactiveLink');
-                            elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
-                            element.addClass('nav-active inactiveLink');
-                            elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
-                        }
-                        //skills
-                        if(skill < 1 && portf > 0) {
-                            var element = jQuery('#nav-skills-link');
-                            var elementh = jQuery('#nav-skills-link-mobile');
-                            element.siblings('li').removeClass('nav-active inactiveLink');
-                            elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
-                            element.addClass('nav-active inactiveLink');
-                            elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
-                        }
-                        //portfolio
-                        if(portf < 1) {
-                            var element = jQuery('#nav-portfolio-link');
-                            var elementh = jQuery('#nav-portfolio-link-mobile');
-                            element.siblings('li').removeClass('nav-active inactiveLink');
-                            elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
-                            element.addClass('nav-active inactiveLink');
-                            elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
-                        }
-
-                        //contact
-                        if((cont-jQuery('#Contact').height()) < 1) {
-                            var element = jQuery('#nav-contact-link');
-                            var elementh = jQuery('#nav-contact-link-mobile');
-                            element.siblings('li').removeClass('nav-active inactiveLink');
-                            elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
-                            element.addClass('nav-active inactiveLink');
-                            elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
-                        }
-                    });
-                    //desktop navbar scroll animation
-                    $('#nav-container ul>li.nav-box>a').on('click', function(){
-                        var href = $(this).attr('href');
-                        jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
-                    });
-
-                    //mobile navbar scroll animation
-                    $('#nav-container-mobile ul>li>a').on('click', function(){
-                        var href = $(this).attr('href');
-                        jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
-                    });
-                    $('#nav-indicator-link').on('click', function(){
-                        var href = $(this).attr('href');
-                        jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
-                    });
-                });
-            })(jQuery);
-        </script>
-        <style>
-            body {
-                font-family: 'Open Sans', sans-serif !important;
-            }
-            h2 {
-                color: #4c5b61;
-            }
-
-            h4 {
-                color: #4c5b61;
-            }
-
-            hr {
-                border-color: #aeaeae;
-            }
-
-            i {
-                padding: 0px 1px 0px 1px;
-            }
-
-            .container-fluid {
-                padding: 0px 0px 0px 0px !important;
-            }
-
-            .header {
-                font-size: 50px;
-            }
-
-            #Navigation {
-                position: absolute;
-                background: #292929;
-                width: 100px;
-                right: 25px;
-                z-index: 5;
-                visibility: visible;
-                border-radius: 5px;
-            }
-
-            .nav-float {
-                top: 5vh;
-                position: fixed !important;
-            }
-
-            .nav-float-mobile {
-                top: 0;
-                position: fixed !important;
-            }
-
-            .nav-scroll {
-                position: absolute;
-            }
-
-            #nav-container { 
-                width: 100%; 
-                padding: 0;
-            }
-
-            .nav-list {
-                margin: 0;
-            }
-
-            .nav-box {
-                margin: 0;
-                width: 100%;
-            }
-
-            #nav-container-mobile {
-                position: absolute;
-                width: 100%;
-                height: 70px;
-                background: #292929;
-                visibility: hidden;
-                z-index: 5;
-            }
-
-            #nav-list-mobile {
-                margin: 0;
-            }
-
-            .nav-link-horizontal {
-                padding-left: 1vw;
-            }
-            
-            .nav-link-container-desktop {
-                padding: 30px 2px 30px 2px;
-                width: 100%;
-            }
-
-            .nav-link-container-mobile {
-                height: 100%;
-                padding-top: 25px;
-            }
-
-            .nav-link { 
-                color: #aeaeae; 
-                height: auto;
-                width: auto;
-                }
-            
-            .nav-link:focus { 
-                color: #aeaeae;
-                text-decoration: none; 
-            }
-
-            .nav-link:hover { 
-                color: white;
-                text-decoration: none;
-            }
-
-            .nav-active {
-                color: white;
-                background: #23637c;
-            }
-
-            #nav-indicator {
-                position: absolute;
-                float: right;
-                width: 100px;
-                height: 100px;
-                top: 90vh;
-                right: 25px;
-                z-index: 4;
-                background: #292929;
-                font-size: 75px;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                visibility: visible;
-            }
-            
-            
-            .nav-indicator-anim {
-                animation: MoveUpDown 1s linear infinite;
-                -moz-animation: MoveUpDown 1s linear infinite;
-                -webkit-animation: MoveUpDown 1s linear infinite;
-                -o-animation: MoveUpDown 1s linear infinite;
-                -ms-animation: MoveUpDown 1s linear infinite;
-            }
-
-            @keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
-
-                50% {
-                    padding-top: 10px;
-                }
-
-                100% {
-                    padding-top: 1px;
-                }
-            }
-            @-moz-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
-
-                50% {
-                    padding-top: 10px;
-                }
-
-                100% {
-                    padding-top: 1px;
-                }
-            }
-
-            @-webkit-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
-
-                50% {
-                    padding-top: 10px;
-                }
-
-                100% {
-                    padding-top: 1px;
-                }
-            }
-
-            @-o-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
-
-                50% {
-                    padding-top: 10px;
-                }
-
-                100% {
-                    padding-top: 1px;
-                }
-            }
-
-            @-ms-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
-
-                50% {
-                    padding-top: 10px;
-                }
-
-                100% {
-                    padding-top: 1px;
-                }
-            }
-
-
-            #Landing {
-                background: no-repeat center right fixed url("https://github.com/mohd-jauwad/Interactive-Resume-beta/blob/master/images/landing-bg.jpg?raw=true");
-                position: relative;
-                height: 100vh;
-                margin: 0;
-                overflow: hidden;
-            }
-
-            .landing-text {
-                position: absolute;
-                margin-top: 35vh;
-                z-index: 2;
-                color: white;
-            }
-
-            .landing-main-txt {
-                font-weight: bold;
-                font-size: 60px;
-            }
-
-            .landing-hr { 
-                width: 35em;
-                transition: ease-in-out .2s;
-                border-color: white !important;
-            }
-            .landing-subtitle { color: white; }
-
-            .landing-overlay {
-                background-color: #4c5b61;
-                position: absolute;
-                opacity: 0.5;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
-
-            #Profile {
-                background: white;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
-
-            #profile-img {
-                border-style: solid;
-                border-color: black;
-            }
-
-            #Experience {
-                background: #dedede;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
-            
-            .table { border: none; }
-            .table tbody > tr > th { border: none; }
-            table > tbody > tr > th > h5 > ul > li {
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-            .exp-dates {
-                font-weight: bold;
-                display:table-cell;
-                vertical-align:middle;
-                float:none;
-                border-style: solid;
-                border: 0px 0px 10px 0px;
-                border-color: black;
-            }
-
-            #Skills {
-                background: white;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
-
-            .fa-star {
-                color: #4c5b61 !important;
-            }
-
-            .star-off {
-                color: #aeaeae !important;
-                font-size: .95em;
-            }
-
-            #Portfolio {
-                background: #dedede;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
-
-            .second-portfolio {
-                
-            }
-
-            #Contact {
-                background: #292929;
-                padding: 50px 0px 300px 0px;
-                width: inherit;
-                margin: 0;
-                color: #aeaeae;
-            }
-            
-            .contact-link {
-                color: #aeaeae;
-                font-size: 20px;
-            }
-
-            .contact-header {
-                color: #aeaeae;
-                font-size: 50px;
-            }
-
-            .inactiveLink {
-                pointer-events: none;
-                cursor: default;
-            }
-
-            @media only screen and (max-width: 1200px) { 
-
-            }
-
-            @media only screen and (max-width: 992px) {
-                .second-portfolio {
-                    margin-top: 20px;
-                }
-            }
-
-            @media only screen and (max-width: 768px) {
-                .header {
-                    margin-top: 50px;
-                }
-                
-                .landing-hr {
-                    width: 15em;
-                }
-                
-                #Navigation {
-                    visibility: hidden;
-                }
-                #nav-indicator {
-                    width: 100%;
-                    right: 0;
-                    border-radius: 0;
-                }
-
-                #nav-container-mobile {
-                    visibility: visible;
-                }
-
-                #nav-indicator-mobile {
-                    visibility: visible;
-                }
-
-                #left-profile {
-                    margin-bottom: 25px;
-                    text-align: center;
-                }
-
-                #right-profile {
-                    margin-top: 50px;
-                    text-align: center;
-                }
-                .second-portfolio {
-                    margin-top: 20px;
-                }
-
-            }
-
-        </style>
-    </head>
-    <body>
-        <div class="container-fluid">
-            <!-- Landing Section -->
-            <div class="row" id="Landing">
-                <div class="col-xs-12 col-lg-12 text-center align-self-center landing-text">
-                    <h1 class="landing-main-txt">Mohd Jauwad</h1>
-                    <hr class="landing-hr">
-                    <h3 class="landing-subtitle">Interactive Resume</h3>
-                </div>
-                <div class="landing-overlay"></div>
-                <a href="#Profile" style="color:white;" id="nav-indicator-link">
-                    <div class="text-center" id="nav-indicator">
-                        <i class="fas fa-angle-down nav-indicator-anim"></i>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Navigation -->
-            <div class="" id="Navigation">
-                <div class="container center-block" id="nav-container">
-                    <ul class="list-unstyled nav-list">
-                        <li class="nav-box text-center" id="nav-profile-link">
-                            <a class="nav-link" href="#Profile">
-                                <div class="nav-link-container-desktop">Profile</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-experience-link">
-                            <a class="nav-link" href="#Experience">
-                                <div class="nav-link-container-desktop">Experience</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-skills-link">
-                            <a class="nav-link" href="#Skills">
-                                <div class="nav-link-container-desktop">Skills</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-portfolio-link">
-                            <a class="nav-link" href="#Portfolio">
-                                <div class="nav-link-container-desktop">Portfolio</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-contact-link">
-                            <a class="nav-link" href="#Contact">
-                                <div class="nav-link-container-desktop">Contact</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="" id="Navigation-Horizontal">
-                <div class="container" id="nav-container-mobile">
-                    <ul class="list-unstyled list-inline text-center d-flex justify-content-center align-items-center" id="nav-list-mobile">
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-profile-link-mobile">
-                            <a class="nav-link" href="#Profile">
-                                <div class="nav-link-container-mobile">Profile</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-experience-link-mobile">
-                            <a class="nav-link" href="#Experience">
-                                    <div class="nav-link-container-mobile">Experience</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-skills-link-mobile">
-                            <a class="nav-link" href="#Skills">
-                                    <div class="nav-link-container-mobile">Skills</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-portfolio-link-mobile">
-                            <a class="nav-link" href="#Portfolio">
-                                <div class="nav-link-container-mobile">Portfolio</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-contact-link-mobile">
-                            <a class="nav-link" href="#Contact">
-                                <div class="nav-link-container-mobile">Contact</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Profile Section -->
-            <div class="row" id="Profile">
-                <h2 class="text-center header">Profile</h2>
-                <br />
-                <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-2 col-lg-offset-2 text-right" id="left-profile">
-                    <h4 class="">About</h4>
-                    <p>I am proficient web developer. I program a lot and I also have good knowledge of front end techinques </p>
-                </div>
-                <div class="col-xs-8 col-sm-4 col-lg-4 col-xs-offset-2 col-sm-offset-0 profile-img">
-                    <img class="img-responsive img-circle center-block" id="profile-image" src="images/jauwad.png" alt="A picture of me" />
-                </div>
-                <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-0 text-left" id="right-profile">
-                    <p>I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. I also like working in a team, you'll learn faster and much more. As the saying goes, 'two heads are better than one' . </p>
-                </div>
-            </div>
-
-            <!-- Experience Section -->
-            <div class="row" id="Experience">
-                <h2 class="text-center header">Experience</h2>
-                <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
-                    <h4>Education</h4>
-                    <table class="table">
-                        <tr>
-                            <th>Muffakham Jah College of Engineering & Technology<br />
-                                <h5>August 2019 - Current</h5>
-                            </th>
-                            <th>B.E. Information Technology<br/>
-                                <h5>Designed and developed an embedded wireless monitoring system to monitor the vital statistics of cattle.</h5>
-                            </th>
-                        </tr>
-                    </table>
-                    <hr>
-                    <h4>Experience</h4>
-                 <!---->   <table class="table exp-table">
-                        <tr>
-                            <th>Unravelling Python Workshop<br />
-                                <h5>May 2021- May 2021</h5>
-                            </th>
-                            <th>Volunteer<br />
-                                <h5>
-                                    <ul>
-                                        <li>It was a brief introduction on Machine Learning with Python</li>
-                                        <li>It was conducted by the IEEE students club of MJCET</li>
-                                    </ul>
-                                </h5>
-                            </th>
-                        </tr>
-                        
-                    </table>
-                </div>
-            </div>
-
-            <!-- Skills Section -->
-            <div class="row" id="Skills">
-                <h2 class="text-center header">Skills</h2>
-                <br />
-                <div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3 skill-tables">
-                    <h4>Programming Languages</h4> 
-                    <div class="row">         
-                        <div class="col-lg-6">             
-                            <table class="table" id="skill-table-1">
-                                <tr>
-                                    <th class="col-xs-6"><h5>HTML</h5></th>
-                                    <th class="col-xs-6 text-right"><h5>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h5>CSS</h5></th>
-                                    <th class="text-right"><h5><h5>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h5>Bootstrap</h5></th>
-                                    <th class="text-right"><h5>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h5>Python</h5></th>
-                                    <th class="text-right"><h5>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h5>MySQL</h5></th>
-                                    <th class="text-right"><h5><h5>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                
-                                <tr>
-                                    <th><h5>C</h5></th>
-                                    <th class="text-right"><h5><h5>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th class="col-xs-6"><h5>C++</h5></th>
-                                    <th class="col-xs-6 text-right"><h5><h5>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h5>Java</h5></th>
-                                    <th class="text-right"><h5><h5>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h5>JavaScript</h5></th>
-                                    <th class="text-right"><h5>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        <i class="fas fa-star star-off"></i>
-                                        </h5>
-                                    </th>
-                                </tr>
-                            </table>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Section -->
-            <div class="row" id="Portfolio">
-                <h2 class="text-center header">Portfolio</h2>
-                <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
-                    <br />
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-6 second-portfolio">
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="images/ph-thumb.png" /></a>
-                        </div>
-                        <div class="col-xs-12 col-lg-6 second-portfolio">
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="images/ph-thumb.png" /></a>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-6">
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="images/ph-thumb.png" /></a>
-                        </div>
-                        <div class="col-xs-12 col-lg-6 second-portfolio">
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="images/ph-thumb.png" /></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="row" id="Contact">
-                <h2 class="contact-header text-center">Contact</h2>
-                <div class="col-xs-12 col-lg-6 col-lg-offset-3" id="contact-column">
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-6 text-center">
-                                <a href="mailto:mohd_jauwad@protonmail.com" class="contact-link"><i class="fas fa-envelope"></i> mohd_jauwad@protonmail.com</a> 
-                            </div>
-                            
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-6 text-center">
-                                    <a href="https://github.com/mohd-jauwad" class="contact-link"><i class="fab fa-github"></i> https://github.com/mohd-jauwad/</a>
-                            </div>
-                        </div>
-                        
-                        <br />
-                        <hr>
-                        <div class="row text-center">
-                            <h5>© Mohd Jauwad | Beta Build | Design: <a href="http://pascalvangemert.nl" style="color:#aeaeae">Pascal Van Gemert</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>  
-            </div>
+
+<head>
+  <title>Mohd Jauwad | Web Developer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <meta name="author" content="Mohd Jauwad">
+  <link rel="author" href="https://github.com/mohd-jauwad/" alt="">
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          var navbox = jQuery('#Navigation');
+          var navboxh = jQuery('#nav-container-mobile');
+          var prof = jQuery('#Profile').offset().top - $(window).scrollTop();
+          var exper = jQuery('#Experience').offset().top - $(window).scrollTop();
+          var skill = jQuery('#Skills').offset().top - $(window).scrollTop();
+          var portf = jQuery('#Portfolio').offset().top - $(window).scrollTop();
+          var cont = jQuery('#Contact').offset().top - $(window).scrollTop();
+
+          //make the nav bar float along with the page
+          if (prof < 40) {
+            navbox.addClass('nav-float');
+            navbox.removeClass('nav-scroll');
+          }
+
+          if (prof < 1) {
+            navboxh.addClass('nav-float-mobile');
+            navboxh.removeClass('nav-scroll');
+          }
+
+          //make the nav bar lock back into position
+          if (prof > 39) {
+            navbox.addClass('nav-scroll');
+            navbox.removeClass('nav-float');
+          }
+
+          if (prof > 0) {
+            navboxh.addClass('nav-scroll');
+            navboxh.removeClass('nav-float-mobile');
+          }
+
+          //profile
+          if (exper > 0) {
+            var element = jQuery('#nav-profile-link');
+            var elementh = jQuery('#nav-profile-link-mobile')
+            element.siblings('li').removeClass('nav-active inactiveLink');
+            elementh.siblings('li').removeClass('nav-active inactiveLink');
+            element.siblings('li').children('a').css('color', '#aeaeae');
+            elementh.siblings('li').children('a').css('color', '#aeaeae');
+            element.addClass('nav-active inactiveLink');
+            elementh.addClass('nav-active inactiveLink');
+            element.children('a').css('color', 'white');
+            elementh.children('a').css('color', 'white');
+          }
+          //experience
+          if (exper < 1 && skill > 0) {
+            var element = jQuery('#nav-experience-link');
+            var elementh = jQuery('#nav-experience-link-mobile');
+            element.siblings('li').removeClass('nav-active inactiveLink');
+            elementh.siblings('li').removeClass('nav-active inactiveLink');
+            element.siblings('li').children('a').css('color', '#aeaeae');
+            elementh.siblings('li').children('a').css('color', '#aeaeae');
+            element.addClass('nav-active inactiveLink');
+            elementh.addClass('nav-active inactiveLink');
+            element.children('a').css('color', 'white');
+            elementh.children('a').css('color', 'white');
+          }
+          //skills
+          if (skill < 1 && portf > 0) {
+            var element = jQuery('#nav-skills-link');
+            var elementh = jQuery('#nav-skills-link-mobile');
+            element.siblings('li').removeClass('nav-active inactiveLink');
+            elementh.siblings('li').removeClass('nav-active inactiveLink');
+            element.siblings('li').children('a').css('color', '#aeaeae');
+            elementh.siblings('li').children('a').css('color', '#aeaeae');
+            element.addClass('nav-active inactiveLink');
+            elementh.addClass('nav-active inactiveLink');
+            element.children('a').css('color', 'white');
+            elementh.children('a').css('color', 'white');
+          }
+          //portfolio
+          if (portf < 1) {
+            var element = jQuery('#nav-portfolio-link');
+            var elementh = jQuery('#nav-portfolio-link-mobile');
+            element.siblings('li').removeClass('nav-active inactiveLink');
+            elementh.siblings('li').removeClass('nav-active inactiveLink');
+            element.siblings('li').children('a').css('color', '#aeaeae');
+            elementh.siblings('li').children('a').css('color', '#aeaeae');
+            element.addClass('nav-active inactiveLink');
+            elementh.addClass('nav-active inactiveLink');
+            element.children('a').css('color', 'white');
+            elementh.children('a').css('color', 'white');
+          }
+
+          //contact
+          if ((cont - jQuery('#Contact').height()) < 1) {
+            var element = jQuery('#nav-contact-link');
+            var elementh = jQuery('#nav-contact-link-mobile');
+            element.siblings('li').removeClass('nav-active inactiveLink');
+            elementh.siblings('li').removeClass('nav-active inactiveLink');
+            element.siblings('li').children('a').css('color', '#aeaeae');
+            elementh.siblings('li').children('a').css('color', '#aeaeae');
+            element.addClass('nav-active inactiveLink');
+            elementh.addClass('nav-active inactiveLink');
+            element.children('a').css('color', 'white');
+            elementh.children('a').css('color', 'white');
+          }
+        });
+        //desktop navbar scroll animation
+        $('#nav-container ul>li.nav-box>a').on('click', function() {
+          var href = $(this).attr('href');
+          jQuery('html,body').animate({
+            scrollTop: jQuery(href).offset().top
+          }, 300);
+        });
+
+        //mobile navbar scroll animation
+        $('#nav-container-mobile ul>li>a').on('click', function() {
+          var href = $(this).attr('href');
+          jQuery('html,body').animate({
+            scrollTop: jQuery(href).offset().top
+          }, 300);
+        });
+        $('#nav-indicator-link').on('click', function() {
+          var href = $(this).attr('href');
+          jQuery('html,body').animate({
+            scrollTop: jQuery(href).offset().top
+          }, 300);
+        });
+      });
+    })(jQuery);
+  </script>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif !important;
+    }
+
+    h2 {
+      color: #4c5b61;
+    }
+
+    h4 {
+      color: #4c5b61;
+    }
+
+    hr {
+      border-color: #aeaeae;
+    }
+
+    i {
+      padding: 0px 1px 0px 1px;
+    }
+
+    .container-fluid {
+      padding: 0px 0px 0px 0px !important;
+    }
+
+    .header {
+      font-size: 50px;
+    }
+
+    #Navigation {
+      position: absolute;
+      background: #292929;
+      width: 100px;
+      right: 25px;
+      z-index: 5;
+      visibility: visible;
+      border-radius: 5px;
+    }
+
+    .nav-float {
+      top: 5vh;
+      position: fixed !important;
+    }
+
+    .nav-float-mobile {
+      top: 0;
+      position: fixed !important;
+    }
+
+    .nav-scroll {
+      position: absolute;
+    }
+
+    #nav-container {
+      width: 100%;
+      padding: 0;
+    }
+
+    .nav-list {
+      margin: 0;
+    }
+
+    .nav-box {
+      margin: 0;
+      width: 100%;
+    }
+
+    #nav-container-mobile {
+      position: absolute;
+      width: 100%;
+      height: 70px;
+      background: #292929;
+      visibility: hidden;
+      z-index: 5;
+    }
+
+    #nav-list-mobile {
+      margin: 0;
+    }
+
+    .nav-link-horizontal {
+      padding-left: 1vw;
+    }
+
+    .nav-link-container-desktop {
+      padding: 30px 2px 30px 2px;
+      width: 100%;
+    }
+
+    .nav-link-container-mobile {
+      height: 100%;
+      padding-top: 25px;
+    }
+
+    .nav-link {
+      color: #aeaeae;
+      height: auto;
+      width: auto;
+    }
+
+    .nav-link:focus {
+      color: #aeaeae;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-active {
+      color: white;
+      background: #23637c;
+    }
+
+    #nav-indicator {
+      position: absolute;
+      float: right;
+      width: 100px;
+      height: 100px;
+      top: 90vh;
+      right: 25px;
+      z-index: 4;
+      background: #292929;
+      font-size: 75px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      visibility: visible;
+    }
+
+
+    .nav-indicator-anim {
+      animation: MoveUpDown 1s linear infinite;
+      -moz-animation: MoveUpDown 1s linear infinite;
+      -webkit-animation: MoveUpDown 1s linear infinite;
+      -o-animation: MoveUpDown 1s linear infinite;
+      -ms-animation: MoveUpDown 1s linear infinite;
+    }
+
+    @keyframes MoveUpDown {
+      0% {
+        padding-top: 0;
+      }
+
+      50% {
+        padding-top: 10px;
+      }
+
+      100% {
+        padding-top: 1px;
+      }
+    }
+
+    @-moz-keyframes MoveUpDown {
+      0% {
+        padding-top: 0;
+      }
+
+      50% {
+        padding-top: 10px;
+      }
+
+      100% {
+        padding-top: 1px;
+      }
+    }
+
+    @-webkit-keyframes MoveUpDown {
+      0% {
+        padding-top: 0;
+      }
+
+      50% {
+        padding-top: 10px;
+      }
+
+      100% {
+        padding-top: 1px;
+      }
+    }
+
+    @-o-keyframes MoveUpDown {
+      0% {
+        padding-top: 0;
+      }
+
+      50% {
+        padding-top: 10px;
+      }
+
+      100% {
+        padding-top: 1px;
+      }
+    }
+
+    @-ms-keyframes MoveUpDown {
+      0% {
+        padding-top: 0;
+      }
+
+      50% {
+        padding-top: 10px;
+      }
+
+      100% {
+        padding-top: 1px;
+      }
+    }
+
+
+    #Landing {
+      background: no-repeat center right fixed url("https://github.com/mohd-jauwad/Interactive-Resume-beta/blob/master/images/landing-bg.jpg?raw=true");
+      position: relative;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .landing-text {
+      position: absolute;
+      margin-top: 35vh;
+      z-index: 2;
+      color: white;
+    }
+
+    .landing-main-txt {
+      font-weight: bold;
+      font-size: 60px;
+    }
+
+    .landing-hr {
+      width: 35em;
+      transition: ease-in-out .2s;
+      border-color: white !important;
+    }
+
+    .landing-subtitle {
+      color: white;
+    }
+
+    .landing-overlay {
+      background-color: #4c5b61;
+      position: absolute;
+      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    #Profile {
+      background: white;
+      padding: 50px 0px 50px 0px;
+      width: inherit;
+      margin: 0;
+    }
+
+    #profile-img {
+      border-style: solid;
+      border-color: black;
+    }
+
+    #Experience {
+      background: #dedede;
+      padding: 50px 0px 50px 0px;
+      width: inherit;
+      margin: 0;
+    }
+
+    .table {
+      border: none;
+    }
+
+    .table tbody>tr>th {
+      border: none;
+    }
+
+    table>tbody>tr>th>h5>ul>li {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .exp-dates {
+      font-weight: bold;
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
+      border-style: solid;
+      border: 0px 0px 10px 0px;
+      border-color: black;
+    }
+
+    #Skills {
+      background: white;
+      padding: 50px 0px 50px 0px;
+      width: inherit;
+      margin: 0;
+    }
+
+    .fa-star {
+      color: #4c5b61 !important;
+    }
+
+    .star-off {
+      color: #aeaeae !important;
+      font-size: .95em;
+    }
+
+    #Portfolio {
+      background: #dedede;
+      padding: 50px 0px 50px 0px;
+      width: inherit;
+      margin: 0;
+    }
+
+    .second-portfolio {}
+
+    #Contact {
+      background: #292929;
+      padding: 50px 0px 300px 0px;
+      width: inherit;
+      margin: 0;
+      color: #aeaeae;
+    }
+
+    .contact-link {
+      color: #aeaeae;
+      font-size: 20px;
+    }
+
+    .contact-header {
+      color: #aeaeae;
+      font-size: 50px;
+    }
+
+    .inactiveLink {
+      pointer-events: none;
+      cursor: default;
+    }
+
+    @media only screen and (max-width: 1200px) {}
+
+    @media only screen and (max-width: 992px) {
+      .second-portfolio {
+        margin-top: 20px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .header {
+        margin-top: 50px;
+      }
+
+      .landing-hr {
+        width: 15em;
+      }
+
+      #Navigation {
+        visibility: hidden;
+      }
+
+      #nav-indicator {
+        width: 100%;
+        right: 0;
+        border-radius: 0;
+      }
+
+      #nav-container-mobile {
+        visibility: visible;
+      }
+
+      #nav-indicator-mobile {
+        visibility: visible;
+      }
+
+      #left-profile {
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      #right-profile {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .second-portfolio {
+        margin-top: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- Landing Section -->
+    <div class="row" id="Landing">
+      <div class="col-xs-12 col-lg-12 text-center align-self-center landing-text">
+        <h1 class="landing-main-txt">Mohd Jauwad</h1>
+        <hr class="landing-hr">
+        <h3 class="landing-subtitle">Interactive Resume</h3>
+      </div>
+      <div class="landing-overlay"></div>
+      <a href="#Profile" style="color:white;" id="nav-indicator-link">
+        <div class="text-center" id="nav-indicator">
+          <i class="fas fa-angle-down nav-indicator-anim"></i>
         </div>
-    </body>
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <div class="" id="Navigation">
+      <div class="container center-block" id="nav-container">
+        <ul class="list-unstyled nav-list">
+          <li class="nav-box text-center" id="nav-profile-link">
+            <a class="nav-link" href="#Profile">
+              <div class="nav-link-container-desktop">Profile</div>
+            </a>
+          </li>
+          <li class="row nav-box text-center" id="nav-experience-link">
+            <a class="nav-link" href="#Experience">
+              <div class="nav-link-container-desktop">Experience</div>
+            </a>
+          </li>
+          <li class="row nav-box text-center" id="nav-skills-link">
+            <a class="nav-link" href="#Skills">
+              <div class="nav-link-container-desktop">Skills</div>
+            </a>
+          </li>
+          <li class="row nav-box text-center" id="nav-portfolio-link">
+            <a class="nav-link" href="#Portfolio">
+              <div class="nav-link-container-desktop">Portfolio</div>
+            </a>
+          </li>
+          <li class="row nav-box text-center" id="nav-contact-link">
+            <a class="nav-link" href="#Contact">
+              <div class="nav-link-container-desktop">Contact</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="" id="Navigation-Horizontal">
+      <div class="container" id="nav-container-mobile">
+        <ul class="list-unstyled list-inline text-center d-flex justify-content-center align-items-center" id="nav-list-mobile">
+          <li class="list-inline-item text-center nav-link-horizontal" id="nav-profile-link-mobile">
+            <a class="nav-link" href="#Profile">
+              <div class="nav-link-container-mobile">Profile</div>
+            </a>
+          </li>
+          <li class="list-inline-item text-center nav-link-horizontal" id="nav-experience-link-mobile">
+            <a class="nav-link" href="#Experience">
+              <div class="nav-link-container-mobile">Experience</div>
+            </a>
+          </li>
+          <li class="list-inline-item text-center nav-link-horizontal" id="nav-skills-link-mobile">
+            <a class="nav-link" href="#Skills">
+              <div class="nav-link-container-mobile">Skills</div>
+            </a>
+          </li>
+          <li class="list-inline-item text-center nav-link-horizontal" id="nav-portfolio-link-mobile">
+            <a class="nav-link" href="#Portfolio">
+              <div class="nav-link-container-mobile">Portfolio</div>
+            </a>
+          </li>
+          <li class="list-inline-item text-center nav-link-horizontal" id="nav-contact-link-mobile">
+            <a class="nav-link" href="#Contact">
+              <div class="nav-link-container-mobile">Contact</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="row" id="Profile">
+      <h2 class="text-center header">Profile</h2>
+      <br />
+      <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-2 col-lg-offset-2 text-right" id="left-profile">
+        <h4 class="">About</h4>
+        <p>I am proficient web developer. I program a lot and I also have good knowledge of front end techinques </p>
+      </div>
+      <div class="col-xs-8 col-sm-4 col-lg-4 col-xs-offset-2 col-sm-offset-0 profile-img">
+        <img class="img-responsive img-circle center-block" id="profile-image" src="images/jauwad.png" alt="A picture of me" />
+      </div>
+      <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-0 text-left" id="right-profile">
+        <p>I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. I also like working in a team, you'll learn faster and much more. As the saying goes, 'two heads are better
+          than one' . </p>
+      </div>
+    </div>
+
+    <!-- Experience Section -->
+    <div class="row" id="Experience">
+      <h2 class="text-center header">Experience</h2>
+      <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
+        <h4>Education</h4>
+        <table class="table">
+          <tr>
+            <th>Muffakham Jah College of Engineering & Technology<br />
+              <h5>August 2019 - Current</h5>
+            </th>
+            <th>B.E. Information Technology<br />
+              <h5>Designed and developed an embedded wireless monitoring system to monitor the vital statistics of cattle.</h5>
+            </th>
+          </tr>
+        </table>
+        <hr>
+        <h4>Experience</h4>
+        <!---->
+        <table class="table exp-table">
+          <tr>
+            <th>Unravelling Python Workshop<br />
+              <h5>May 2021- May 2021</h5>
+            </th>
+            <th>Volunteer<br />
+              <h5>
+                <ul>
+                  <li>It was a brief introduction on Machine Learning with Python</li>
+                  <li>It was conducted by the IEEE students club of MJCET</li>
+                </ul>
+              </h5>
+            </th>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="row" id="Skills">
+      <h2 class="text-center header">Skills</h2>
+      <br />
+      <div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3 skill-tables">
+        <h4>Programming Languages</h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <table class="table" id="skill-table-1">
+              <tr>
+                <th class="col-xs-6">
+                  <h5>HTML</h5>
+                </th>
+                <th class="col-xs-6 text-right">
+                  <h5>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </h5>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <h5>CSS</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <h5>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </h5>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <h5>Bootstrap</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star star-off"></i>
+                  </h5>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <h5>Python</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star star-off"></i>
+                  </h5>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <h5>MySQL</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <h5>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                    </h5>
+                </th>
+              </tr>
+
+              <tr>
+                <th>
+                  <h5>C</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <h5>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                    </h5>
+                </th>
+              </tr>
+              <tr>
+                <th class="col-xs-6">
+                  <h5>C++</h5>
+                </th>
+                <th class="col-xs-6 text-right">
+                  <h5>
+                    <h5>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                    </h5>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <h5>Java</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <h5>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                      <i class="fas fa-star star-off"></i>
+                    </h5>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <h5>JavaScript</h5>
+                </th>
+                <th class="text-right">
+                  <h5>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star star-off"></i>
+                    <i class="fas fa-star star-off"></i>
+                    <i class="fas fa-star star-off"></i>
+                  </h5>
+                </th>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="row" id="Portfolio">
+      <h2 class="text-center header">Portfolio</h2>
+      <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
+        <br />
+        <div class="row">
+          <div class="col-xs-12 col-lg-6 second-portfolio">
+            <a href="http://temp.link" target="__blank"><img class="img-responsive" src="images/ph-thumb.png" /></a>
+          </div>
+          <div class="col-xs-12 col-lg-6 second-portfolio">
+            <a href="http://temp.link" target="__blank"><img class="img-responsive" src="images/ph-thumb.png" /></a>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            <a href="http://temp.link" target="__blank"><img class="img-responsive" src="images/ph-thumb.png" /></a>
+          </div>
+          <div class="col-xs-12 col-lg-6 second-portfolio">
+            <a href="http://temp.link" target="__blank"><img class="img-responsive" src="images/ph-thumb.png" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section --->
+    <div class="row" id="Contact">
+      <h2 class="contact-header text-center">Contact</h2>
+      <div class="col-xs-12 col-lg-6 col-lg-offset-3" id="contact-column">
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-lg-6 text-center">
+            <a href="mailto:mohd_jauwad@protonmail.com" class="contact-link"><i class="fas fa-envelope"></i> mohd_jauwad@protonmail.com</a>
+          </div>
+
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-12 col-lg-6 text-center">
+            <a href="https://github.com/mohd-jauwad" class="contact-link"><i class="fab fa-github"></i> https://github.com/mohd-jauwad/</a>
+          </div>
+        </div>
+
+        <br />
+        <hr>
+        <div class="row text-center">
+          <h5>© Mohd Jauwad | Beta Build | Design: <a href="http://pascalvangemert.nl" style="color:#aeaeae">Pascal Van Gemert</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>
